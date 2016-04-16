@@ -8,9 +8,10 @@ class Human
 		puts "Choose a space from the following: #{array}."
 		answer = gets.chomp
 		move = answer.to_i
-		if valid_position?(array, move-1)
+		if move == board[move-1]
 			move = answer.to_i
 		else
+			puts "Invalid position."
 		end
 	end
 
