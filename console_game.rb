@@ -1,4 +1,5 @@
 require_relative "TTT_AI_Game.rb"
+require_relative "Tic_Tac_Toe_Human.rb"
 
 def choose_player_mode()
 	puts "Would you like Player 1 to be human or AI?"
@@ -14,6 +15,7 @@ end
 def player_one_mode(answer)
 	if answer.downcase == "human"
 		player_one = {:player_mode => Human.new, :marker => "X"}
+		puts "Player 1 is X."
 	elsif answer.downcase == "ai"
 		puts "Would you like the AI to be simple or sequential?"
 		answer = gets.chomp
@@ -33,6 +35,7 @@ end
 def player_two_mode(answer)
 	if answer.downcase == "human"
 		player_two = {:player_mode => Human.new, :marker => "O"}
+		puts "Player two is O."
 	elsif answer.downcase == "ai"
 		puts "Would you like the AI to be simple or sequential?"
 		answer = gets.chomp
@@ -46,6 +49,7 @@ def player_two_mode(answer)
 	else
 		puts "Invalid choice."
 	end
+	player_two
 end
 
 def display_board(board)
